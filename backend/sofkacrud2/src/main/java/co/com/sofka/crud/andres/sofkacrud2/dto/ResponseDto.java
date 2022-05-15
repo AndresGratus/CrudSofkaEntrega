@@ -1,4 +1,4 @@
-package co.com.sofka.crud.andres.sofkacrud2.todo;
+package co.com.sofka.crud.andres.sofkacrud2.dto;
 
 //@JsonInclude(JsonInclude.Include.NON_NULL) //cuando reotrne los valores, si hay uno null que no lo muestre
 

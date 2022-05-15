@@ -1,4 +1,4 @@
-package co.com.sofka.crud.andres.sofkacrud2.todo;
+package co.com.sofka.crud.andres.sofkacrud2.dto;
 
 import java.util.HashSet;
 import java.util.Set;

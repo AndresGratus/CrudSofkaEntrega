@@ -3,8 +3,8 @@ package co.com.sofka.crud.andres.sofkacrud2.service;
 
 import co.com.sofka.crud.andres.sofkacrud2.entity.List;
 import co.com.sofka.crud.andres.sofkacrud2.repository.ListRepository;
-import co.com.sofka.crud.andres.sofkacrud2.todo.ListDto;
-import co.com.sofka.crud.andres.sofkacrud2.todo.ResponseDto;
+import co.com.sofka.crud.andres.sofkacrud2.dto.ListDto;
+import co.com.sofka.crud.andres.sofkacrud2.dto.ResponseDto;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

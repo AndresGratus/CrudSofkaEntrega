@@ -4,8 +4,8 @@ import co.com.sofka.crud.andres.sofkacrud2.entity.List;
 import co.com.sofka.crud.andres.sofkacrud2.entity.Todo;
 import co.com.sofka.crud.andres.sofkacrud2.exception.ValidationException;
 import co.com.sofka.crud.andres.sofkacrud2.repository.TodoRepository;
-import co.com.sofka.crud.andres.sofkacrud2.todo.ResponseDto;
-import co.com.sofka.crud.andres.sofkacrud2.todo.TodoDto;
+import co.com.sofka.crud.andres.sofkacrud2.dto.ResponseDto;
+import co.com.sofka.crud.andres.sofkacrud2.dto.TodoDto;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

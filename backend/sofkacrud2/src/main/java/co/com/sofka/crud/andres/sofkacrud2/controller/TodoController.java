@@ -2,8 +2,8 @@ package co.com.sofka.crud.andres.sofkacrud2.controller;
 
 
 import co.com.sofka.crud.andres.sofkacrud2.service.TodoService;
-import co.com.sofka.crud.andres.sofkacrud2.todo.ResponseDto;
-import co.com.sofka.crud.andres.sofkacrud2.todo.TodoDto;
+import co.com.sofka.crud.andres.sofkacrud2.dto.ResponseDto;
+import co.com.sofka.crud.andres.sofkacrud2.dto.TodoDto;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

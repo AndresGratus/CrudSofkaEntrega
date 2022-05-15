@@ -1,7 +1,7 @@
 package co.com.sofka.crud.andres.sofkacrud2.controller;
 
 import co.com.sofka.crud.andres.sofkacrud2.exception.ValidationException;
-import co.com.sofka.crud.andres.sofkacrud2.todo.ResponseDto;
+import co.com.sofka.crud.andres.sofkacrud2.dto.ResponseDto;
 
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

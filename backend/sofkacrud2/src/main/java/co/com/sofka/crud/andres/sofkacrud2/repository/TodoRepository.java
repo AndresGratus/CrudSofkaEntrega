@@ -1,8 +1,9 @@
 package co.com.sofka.crud.andres.sofkacrud2.repository;
 
 
-import co.com.sofka.crud.andres.sofkacrud2.entity.Todo;
+
+import com.sun.xml.bind.v2.TODO;
 import org.springframework.data.repository.CrudRepository;
 
-public interface TodoRepository extends CrudRepository<Todo, Integer> {
+public interface TodoRepository extends CrudRepository<TODO, Integer> {
 }
