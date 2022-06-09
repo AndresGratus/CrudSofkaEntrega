@@ -2,14 +2,14 @@ package co.com.sofka.crud.andres.sofkacrud2.dto;
 
 
 //TDo Sirven para  trasportar datos
-public class TodoDto {
+public class ToDoListDTO {
     private Integer id;
 
     private String name;
 
     private boolean completed;
 
-    private ListDto list;
+    private Long idList;
 
     public Integer getId() {
         return id;
@@ -27,12 +27,13 @@ public class TodoDto {
         this.name = name;
     }
 
-    public ListDto getList() {
-        return list;
+    public Long getIdList() {
+        return idList;
     }
 
-    public void setList(ListDto list) {
-        this.list = list;
+
+    public void setIdList(Long idList) {
+        this.idList = idList;
     }
 
     public boolean isCompleted() {

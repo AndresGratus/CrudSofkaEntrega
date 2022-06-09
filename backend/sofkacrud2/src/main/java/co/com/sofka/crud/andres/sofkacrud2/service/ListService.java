@@ -2,6 +2,7 @@ package co.com.sofka.crud.andres.sofkacrud2.service;
 
 
 import co.com.sofka.crud.andres.sofkacrud2.entity.List;
+import co.com.sofka.crud.andres.sofkacrud2.entity.ListEntity;
 import co.com.sofka.crud.andres.sofkacrud2.repository.ListRepository;
 import co.com.sofka.crud.andres.sofkacrud2.dto.ListDto;
 import co.com.sofka.crud.andres.sofkacrud2.dto.ResponseDto;
@@ -13,44 +14,53 @@ import org.springframework.stereotype.Service;
 Este service guarda los datos de las listas, llamandolos desde los listDto (el id y el name) y los guarda en el repositorio.
  */
 
+
+import co.com.sofka.crud.entities.ListEntity;
+import co.com.sofka.crud.repository.IListRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import java.util.ArrayList;
+import java.util.Optional;
+
+
 @Service
 public class ListService {
 
-
     @Autowired
-    private ListRepository listRepository;
+    ListRepository listRepository;
 
-    public ResponseDto list() {
-        return new ResponseDto(listRepository.findAll(), "probando ejercicios");
+    public ArrayList<ListEntity> getAllList(){
+        return (ArrayList<ListEntity>) listRepository.findAll();
     }
 
-    public ResponseDto save(ListDto listDto) {
-        //trae los datos del dto y los guarda en list
-        List list = new List();
-        list.setId(listDto.getId());
-        list.setName(listDto.getName());
-        list = listRepository.save(list);
 
-        return new ResponseDto(list, "Se ha creado la lista correctamente");
+    public ListEntity saveList(ListEntity list){
+        return listRepository.save(list);
     }
 
-    //borrar lista
-    public ResponseDto delete(ListDto listDto) {
-        List list = new List();
-        list.setId(listDto.getId());
-        listRepository.delete(list);
-        return new ResponseDto("ListTodo eliminado correctamente");
-    }
-    //borrar listapor id
-    public ResponseDto deleteById(Integer id){
-        listRepository.deleteById(id);
-        return new ResponseDto("ListTodo eliminado correctamente");
-
+    public Optional<ListEntity> getListById(Long id){
+        return listRepository.findById(id);
     }
 
-    public ResponseDto get(Integer id) {
 
-        return new ResponseDto(listRepository.findById(id).orElseThrow());
+    public void deleteListById(Long id){
+        Optional<ListEntity> currentList = listRepository.findById(id); // se comporta como wraper evitamos que el método nos devuelva null
+        if(currentList.isPresent()){
+            ListEntity _currentlist = currentList.get();
+            listRepository.delete(_currentlist);
+        }else {
+            throw new RuntimeException("No existe lista para borrar");
+        }
     }
 
+
+    public ListEntity updateList(Long id, ListEntity list){
+        Optional<ListEntity> currentList = listRepository.findById(id);
+        if(currentList.isPresent()){
+            ListEntity _list = currentList.get();
+            _list.setName(list.getName());
+            return listRepository.save(_list);
+        }
+        throw new RuntimeException("No existe lista para actualizar");
+    }
 }

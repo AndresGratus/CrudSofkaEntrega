@@ -14,7 +14,7 @@ public class ListDto {
     private Integer id;
     private String name;
 
-    private Set<TodoDto> todoList = new HashSet<>();
+    private Set<ToDoListDTO> todoList = new HashSet<>();
 
     public Integer getId() {
         return id;
@@ -32,11 +32,11 @@ public class ListDto {
         this.name = name;
     }
 
-    public Set<TodoDto> getTodoList() {
+    public Set<ToDoListDTO> getTodoList() {
         return todoList;
     }
 
-    public void setTodoList(Set<TodoDto> todoList) {
+    public void setTodoList(Set<ToDoListDTO> todoList) {
         this.todoList = todoList;
     }
 }

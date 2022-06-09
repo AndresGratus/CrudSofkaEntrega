@@ -1,7 +1,13 @@
 package co.com.sofka.crud.andres.sofkacrud2.entity;
 
-import javax.persistence.*;
-import java.util.HashSet;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.Set;
 /*
 Esta es la tabla que crea las listas.
@@ -14,25 +20,32 @@ tabla hash en realidad es una instancia de HashMap. ... HashSet contiene un conj
 que le permite determinar fácil y rápidamente si un objeto ya está en el conjunto o no.
  */
 
-@Table(name = "list")
-@Entity()
-public class List {
+@Entity
+public class ListEntity {
+
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.AUTO) //genera ID automático
+    private Long id;
 
-    @Column(length = 15, nullable = false)
+    @Column(nullable = false, unique = true)
     private String name;
 
-    @OneToMany(mappedBy = "list")
-    private Set<Todo> todoList = new HashSet<>();
+    @OneToMany(mappedBy = "list", cascade = CascadeType.ALL, orphanRemoval= true, fetch = FetchType.EAGER)
+    private Set<TodoEntity> toDos;
 
-    public Integer getId() {
+    public ListEntity() {
+    }
+    public ListEntity(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -42,18 +55,5 @@ public class List {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Set<Todo> getTodoList() {
-        return todoList;
-    }
-
-    public void setTodoList(Set<Todo> todoList) {
-        this.todoList = todoList;
-    }
-
-    public void addTodoList(Todo todo) {
-        this.todoList.add(todo);
-
     }
 }
