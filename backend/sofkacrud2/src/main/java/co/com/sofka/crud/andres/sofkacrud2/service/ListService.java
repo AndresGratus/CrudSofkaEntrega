@@ -5,13 +5,13 @@ package co.com.sofka.crud.andres.sofkacrud2.service;
 import co.com.sofka.crud.andres.sofkacrud2.entity.ListEntity;
 import co.com.sofka.crud.andres.sofkacrud2.repository.ListRepository;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 /*
 Este service guarda los datos de las listas, llamandolos desde los listDto (el id y el name) y los guarda en el repositorio.
  */
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Optional;
 

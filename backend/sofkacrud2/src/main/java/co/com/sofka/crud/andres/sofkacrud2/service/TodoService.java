@@ -1,6 +1,6 @@
 package co.com.sofka.crud.andres.sofkacrud2.service;
 
-import co.com.sofka.crud.andres.sofkacrud2.entity.List;
+
 import co.com.sofka.crud.andres.sofkacrud2.entity.TodoEntity;
 import co.com.sofka.crud.andres.sofkacrud2.dto.ToDoListDTO;
 
@@ -17,9 +17,7 @@ y los guarda en el repositorio.
 define las excepciones en el caso de actualizarse los datos
 */
 
-import co.com.sofka.crud.dto.ToDoListDTO;
-import co.com.sofka.crud.entities.TodoEntity;
-import co.com.sofka.crud.repository.ITodoRepository;
+
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 
